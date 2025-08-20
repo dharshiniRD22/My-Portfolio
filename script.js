@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
@@ -141,34 +140,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (skillsSection) {
         observer.observe(skillsSection);
     }
+
     
-    // Form submission
-    // const contactForm = document.getElementById('contactForm');
-    // if (contactForm) {
-    //     contactForm.addEventListener('submit', function(e) {
-    //         e.preventDefault();
-            
-    //         // Get form values
-    //         const name = document.getElementById('name').value;
-    //         const email = document.getElementById('email').value;
-    //         const subject = document.getElementById('subject').value;
-    //         const message = document.getElementById('message').value;
-            
-    //         // Here you would typically send the form data to a server
-    //         // For this example, we'll just log it and show an alert
-    //         console.log({ name, email, subject, message });
-            
-    //         alert('Thank you for contacting me ');
-    //         contactForm.reset();
-    //     });
-    // }
-    
-    // Update copyright year
     const yearElement = document.getElementById('year');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
-    
+
     // Add animation to elements when they come into view
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.hero-content, .about-content, .education-timeline, .skills-container, .projects-grid, .contact-content');
@@ -183,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
-    
+
     // Set initial styles for animation
     const animatedElements = document.querySelectorAll('.hero-content, .about-content, .education-timeline, .skills-container, .projects-grid, .contact-content');
     animatedElements.forEach(element => {
@@ -191,10 +169,10 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transform = 'translateY(30px)';
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
-    
+
     // Run once on page load
     animateOnScroll();
-    
+
     // Run on scroll
     window.addEventListener('scroll', animateOnScroll);
 });
